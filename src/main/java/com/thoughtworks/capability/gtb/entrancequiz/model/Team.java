@@ -22,4 +22,8 @@ public class Team {
     public void addMembers(Student student) {
         members.add(student);
     }
+
+    public void clearMembers() {
+        members.clear();
+    }
 }

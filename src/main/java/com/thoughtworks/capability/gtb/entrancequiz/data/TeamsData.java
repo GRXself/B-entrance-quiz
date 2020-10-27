@@ -24,8 +24,9 @@ public class TeamsData {
     }
 
     public void resetTeams() {
-        allTeams = new ArrayList<>();
-        initData();
+        allTeams.forEach(team -> {
+            team.clearMembers();
+        });
     }
 
     private void initData() {
