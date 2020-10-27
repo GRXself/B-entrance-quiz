@@ -31,7 +31,6 @@ public class TeamService {
 
     private void putStudentsIntoTeams(List<Student> students) {
         int numberPerTeam = students.size() / allTeams.size();
-        int overSizedTeamNumbers = students.size() % allTeams.size();
 
         for( int studentIndex = 0, teamOffset = 0; studentIndex < students.size(); studentIndex++) {
             int teamIndex = studentIndex / numberPerTeam;
@@ -39,8 +38,6 @@ public class TeamService {
                 teamIndex = teamOffset;
                 teamOffset++;
             }
-            System.out.println(teamIndex);
-            System.out.println(studentIndex);
             allTeams.get(teamIndex).addMembers(students.get(studentIndex));
         }
     }
