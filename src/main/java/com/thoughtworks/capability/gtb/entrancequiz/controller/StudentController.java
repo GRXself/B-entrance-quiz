@@ -14,11 +14,13 @@ import java.util.List;
 @RestController
 public class StudentController {
 
+    // TODO GTB-工程实践: - @Autowired注解可以省略
     @Autowired
     private StudentService studentService;
 
     @CrossOrigin(origins = "http://localhost:1234")
     @GetMapping("/students")
+    // TODO GTB-知识点: - 已经使用@RestController，可以直接返回List
     public ResponseEntity<List<Student>> getAllStudents() {
         return new ResponseEntity<>(studentService.getAllStudents(), HttpStatus.OK);
     }
